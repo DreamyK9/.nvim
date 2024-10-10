@@ -28,3 +28,5 @@ vim.keymap.set('n', '<leader>cd', function()
     vim.cmd("lcd %:p:h")
 end, {noremap = true, silent = true})
 
+-- Use forward slashes on windows
+vim.cmd("set shellslash")
