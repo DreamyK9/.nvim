@@ -11,7 +11,7 @@ local M = {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "pylsp", "tsserver"}
+                ensure_installed = { "lua_ls", "pylsp"}
             })
         end
     },
@@ -22,7 +22,6 @@ local M = {
             local lspconfig = require("lspconfig")
             lspconfig.lua_ls.setup({})
             lspconfig.pylsp.setup({})
-            lspconfig.tsserver.setup({})
 
             vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
             vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
