@@ -1,4 +1,5 @@
 local M = {
+    -- Treesitter builds syntax trees for code files and thereby enables syntax highlighting and language features
     "nvim-treesitter/nvim-treesitter",
     build = function()
         require("nvim-treesitter.install").update({ with_sync = true })()

@@ -1,4 +1,5 @@
 local M = {
+    -- Neotree adds a file explorer to neovim
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
     dependencies = {

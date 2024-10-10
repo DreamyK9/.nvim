@@ -1,4 +1,5 @@
 local M = {
+    -- catppuccin makes neovim look fancy pastel
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,
