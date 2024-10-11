@@ -3,7 +3,7 @@ local M = {
     'RaafatTurki/hex.nvim',
     config = function ()
         require 'hex'.setup()
-        vim.keymap.set('n', '<C-b>', ':HexToggle<CR>', {})
+        vim.keymap.set('n', '<leader>b', ':HexToggle<CR>', {})
     end
 }
 
