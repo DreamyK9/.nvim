@@ -22,11 +22,14 @@ vim.wo.relativenumber = true
 --pattern = "*",
 --command = "silent! lcd %:p:h"
 --})
-
+--
 -- Alternative: key mapping
 vim.keymap.set('n', '<leader>cd', function()
     vim.cmd("lcd %:p:h")
 end, {noremap = true, silent = true})
 
 -- Use forward slashes on windows
+-- Warning: might cause issues with plugins (like telescope)
 vim.cmd("set shellslash")
+-- set terminal to interactive mode
+vim.cmd("set shellcmdflag=-ic")
