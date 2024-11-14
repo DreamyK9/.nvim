@@ -33,3 +33,8 @@ end, {noremap = true, silent = true})
 vim.cmd("set shellslash")
 -- set terminal to interactive mode
 vim.cmd("set shellcmdflag=-ic")
+
+-- quick keybind for highlight removal after search
+vim.keymap.set('n', '<C-_>', function()
+    vim.cmd(":noh")
+end, {noremap = true, silent = true})
