@@ -7,9 +7,12 @@ local M = {
         config = function()
             local builtin = require("telescope.builtin")
 
-            vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-            vim.keymap.set('n', '<leader>fh', function() vim.cmd("Telescope find_files hidden=true") end, {})
-            vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+            vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = "Fuzzy find files in cwd" })
+            vim.keymap.set('n', '<leader>fh', function() vim.cmd("Telescope find_files hidden=true") end, { desc = "Fuzzy find hidden files in cwd" })
+            vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = "Find string in cwd" })
+            vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = "Fuzzy find recent files" })
+            vim.keymap.set('n', '<leader>fs', builtin.git_status, { })
+            vim.keymap.set('n', '<leader>fc', builtin.git_commits, { })
         end
     },
     {
