@@ -46,6 +46,7 @@ map("n", "<leader>fg", "<CMD>Telescope live_grep<CR>", { desc = "Find string in 
 map("n", "<leader>fb", "<CMD>Telescope buffers<CR>", { desc = "Fuzzy find opened files" })
 map("n", "<leader>fs", "<CMD>Telescope git_status<CR>", { desc = "Show git status" })
 map("n", "<leader>fc", "<CMD>Telescope git_commits<CR>", { desc = "Browse git commits" })
+map("n", "<leader>ft", "<CMD>TodoTelescope<CR>", { desc = "Find todo markers" })
 
 -- Move cwd to currently focused file
 map("n", "<leader>cd", "<CMD>lcd %:p:h<CR>")
