@@ -43,7 +43,7 @@ map("n", "<C-_>", "<CMD>nohlsearch<CR>")
 map("n", "<leader>ff", "<CMD>Telescope find_files<CR>", { desc = "Fuzzy find files in cwd" })
 map("n", "<leader>fh", "<CMD>Telescope find_files hidden=true<CR>", { desc = "Fuzzy find hidden files in cwd" })
 map("n", "<leader>fg", "<CMD>Telescope live_grep<CR>", { desc = "Find string in cwd" })
-map("n", "<leader>fb", "<CMD>Telescope buffers<CR>", { desc = "Fuzzy find recent files" })
+map("n", "<leader>fb", "<CMD>Telescope buffers<CR>", { desc = "Fuzzy find opened files" })
 map("n", "<leader>fs", "<CMD>Telescope git_status<CR>", { desc = "Show git status" })
 map("n", "<leader>fc", "<CMD>Telescope git commits<CR>", { desc = "Browse git commits" })
 
