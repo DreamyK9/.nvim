@@ -45,7 +45,7 @@ map("n", "<leader>fh", "<CMD>Telescope find_files hidden=true<CR>", { desc = "Fu
 map("n", "<leader>fg", "<CMD>Telescope live_grep<CR>", { desc = "Find string in cwd" })
 map("n", "<leader>fb", "<CMD>Telescope buffers<CR>", { desc = "Fuzzy find opened files" })
 map("n", "<leader>fs", "<CMD>Telescope git_status<CR>", { desc = "Show git status" })
-map("n", "<leader>fc", "<CMD>Telescope git commits<CR>", { desc = "Browse git commits" })
+map("n", "<leader>fc", "<CMD>Telescope git_commits<CR>", { desc = "Browse git commits" })
 
 -- Move cwd to currently focused file
 map("n", "<leader>cd", "<CMD>lcd %:p:h<CR>")
