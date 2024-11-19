@@ -1,4 +1,4 @@
-local M = {
+return {
 	-- Lsp_lines adds multi-line rendering for diagnostics
 	"ErichDonGubler/lsp_lines.nvim",
 	config = function()
@@ -7,5 +7,3 @@ local M = {
 		vim.keymap.set("", "<Leader>l", require("lsp_lines").toggle, { desc = "Toggle lsp_lines" })
 	end,
 }
-
-return { M }
