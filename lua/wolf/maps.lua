@@ -55,6 +55,8 @@ map("n", "<leader>cd", "<CMD>lcd %:p:h<CR>")
 map("n", "<leader>x", "<CMD>HexToggle<CR>")
 
 -- Lsp stuff
-map("n", "K", vim.lsp.buf.hover)
-map("n", "gd", vim.lsp.buf.definition)
-map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action)
+lsp = vim.lsp.buf
+map("n", "K", lsp.hover)
+map("n", "gd", lsp.definition)
+map({ "n", "v" }, "<leader>ca", lsp.code_action)
+map("n", "<leader>R", lsp.rename)
