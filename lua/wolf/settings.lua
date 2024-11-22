@@ -25,3 +25,4 @@ o.splitright = true
 o.splitbelow = true
 o.termguicolors = true
 o.shellslash = true
+vim.cmd("language en_US")
