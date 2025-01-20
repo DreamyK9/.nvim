@@ -56,7 +56,12 @@ map("n", "<leader>x", "<CMD>HexToggle<CR>")
 
 -- Lsp stuff
 lsp = vim.lsp.buf
-map("n", "K", lsp.hover)
+map("n", "<leader>k", lsp.hover)
 map("n", "gd", lsp.definition)
 map({ "n", "v" }, "<leader>ca", lsp.code_action)
 map("n", "<leader>R", lsp.rename)
+
+-- -- Markdown preview
+-- map({ "n", "i", "v" }, "<C-m>", "<CMD>MarkdownPreview<CR>")
+-- map({ "n", "i", "v" }, "<C-M>", "<CMD>MarkdownPreviewStop<CR>")
+-- map({ "n", "i", "v" }, "<C-p>", "<CMD>MarkdownPreviewToggle<CR>")
