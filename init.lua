@@ -4,7 +4,7 @@
 local config = "wolf"
 
 -- Choose which mode to load the config in.
--- Leave empty if not applicable
+-- Does not affect unsupporting configs
 -- Possible Choices:
 --    "full" - all features
 --    "basic" - features that are reasonable everywhere
