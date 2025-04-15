@@ -39,6 +39,9 @@ map("n", "<C-Down>", "<C-w>-")
 -- Remove Search Highlighting
 map("n", "<C-_>", "<CMD>nohlsearch<CR>")
 
+-- Alternative to escape key
+map({ "n", "i", "v", "x", "o", "t" }, "<leader><tab>", "<ESC>")
+
 -- Telescope
 map("n", "<leader>ff", "<CMD>Telescope find_files<CR>", { desc = "Fuzzy find files in cwd" })
 map("n", "<leader>fh", "<CMD>Telescope find_files hidden=true<CR>", { desc = "Fuzzy find hidden files in cwd" })
