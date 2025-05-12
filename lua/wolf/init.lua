@@ -8,9 +8,9 @@ mode = {
 local mode_order = {"full", "basic", "minimal", "offline"}
 
 -- mode is defined globally in the entry file
-if config_mode == "" then config_mode = "full"
+if config_mode == "" then config_mode = "full" end
 
-for m, _ in mode_order.pairs() do
+for m, _ in pairs(mode_order) do
 	if not m == config_mode then
 		mode[m] = false
 	else
