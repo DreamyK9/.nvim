@@ -44,12 +44,13 @@ map({ "n", "i", "v", "x", "o", "t" }, "<leader><tab>", "<ESC>")
 
 -- Telescope
 map("n", "<leader>ff", "<CMD>Telescope find_files<CR>", { desc = "Fuzzy find files in cwd" })
-map("n", "<leader>fh", "<CMD>Telescope find_files hidden=true<CR>", { desc = "Fuzzy find hidden files in cwd" })
+map("n", "<leader>fF", "<CMD>Telescope find_files hidden=true<CR>", { desc = "Fuzzy find hidden files in cwd" })
 map("n", "<leader>fg", "<CMD>Telescope live_grep<CR>", { desc = "Find string in cwd" })
 map("n", "<leader>fb", "<CMD>Telescope buffers<CR>", { desc = "Fuzzy find opened files" })
 map("n", "<leader>fs", "<CMD>Telescope git_status<CR>", { desc = "Show git status" })
 map("n", "<leader>fc", "<CMD>Telescope git_commits<CR>", { desc = "Browse git commits" })
 map("n", "<leader>ft", "<CMD>TodoTelescope<CR>", { desc = "Find todo markers" })
+map("n", "<leader>fh", "<CMD>Noice pick<CR>", { desc = "List message history" })
 
 -- Move cwd to currently focused file
 map("n", "<leader>cd", "<CMD>lcd %:p:h<CR>")
