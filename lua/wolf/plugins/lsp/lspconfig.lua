@@ -5,6 +5,7 @@ return {
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		{ "folke/lazydev.nvim", opts = {} },
+		"mason-org/mason-lspconfig.nvim",
 	},
 	config = function()
 		local nvim_lsp = require("lspconfig")
