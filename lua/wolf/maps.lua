@@ -17,8 +17,8 @@ map("n", "<leader>q", "<CMD>q<CR>")
 map("i", "jk", "<ESC>")
 
 -- NeoTree
-map("n", "<leader>e", "<CMD>Neotree toggle<CR>")
-map("n", "<leader>r", "<CMD>Neotree focus<CR>")
+map("n", "<leader>r", "<CMD>Neotree toggle<CR>")
+-- map("n", "<leader>r", "<CMD>Neotree focus<CR>")
 
 -- New Windows
 map("n", "<leader>o", "<CMD>vsplit<CR>")
@@ -69,3 +69,22 @@ map("n", "<leader>R", lsp.rename)
 -- map({ "n", "i", "v" }, "<C-m>", "<CMD>MarkdownPreview<CR>")
 -- map({ "n", "i", "v" }, "<C-M>", "<CMD>MarkdownPreviewStop<CR>")
 -- map({ "n", "i", "v" }, "<C-p>", "<CMD>MarkdownPreviewToggle<CR>")
+
+-- Execute current file
+-- Source: https://www.reddit.com/r/neovim/comments/1ai19ux/execute_current_file_script_using_a_keymap_i_use/
+--
+-- If this is a script, make it executable, and execute it in a split pane on the right
+-- Had to include quotes around "%" because there are some apple dirs that contain spaces, like iCloud
+vim.keymap.set("n", "<leader>e", function()
+	local file = vim.fn.expand("%") -- Get the current file name
+	local first_line = vim.fn.getline(1) -- Get the first line of the file
+	if string.match(first_line, "^#!/") then -- If first line contains shebang
+		local escaped_file = vim.fn.shellescape(file) -- Properly escape the file name for shell commands
+		vim.cmd("!chmod +x " .. escaped_file) -- Make the file executable
+		vim.cmd("vsplit") -- Split the window vertically
+		vim.cmd("terminal " .. escaped_file) -- Open terminal and execute the file
+		vim.cmd("startinsert") -- Enter insert mode, recommended by echasnovski on Reddit
+	else
+		vim.cmd("echo 'Not a script. Shebang line not found.'")
+	end
+end, { desc = "Execute current file in terminal (if it's a script)" })
