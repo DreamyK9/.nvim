@@ -23,12 +23,10 @@ return {
 
 		require("mason-tool-installer").setup({
 			ensure_installed = {
-				"prettier",
+				"prettier", -- JavaScript & Co. formatter
+				"eslint_d", -- JavaScript formatter
 				"stylua", -- lua formatter
-				"isort", -- python formatter
-				"black", -- python formatter
-				"pylint",
-				"eslint_d",
+				"ruff", -- Blazingly fast, comprehensive python formatter and linter, written in Rust
 			},
 		})
 	end,
