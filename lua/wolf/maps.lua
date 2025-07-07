@@ -17,7 +17,7 @@ map("n", "<leader>q", "<CMD>q<CR>")
 map("i", "jk", "<ESC>")
 
 -- NeoTree
-map("n", "<leader>r", "<CMD>Neotree toggle<CR>")
+map("n", "<leader>R", "<CMD>Neotree toggle<CR>")
 -- map("n", "<leader>r", "<CMD>Neotree focus<CR>")
 
 -- New Windows
@@ -45,12 +45,18 @@ map({ "n", "i", "v", "x", "o", "t" }, "<leader><tab>", "<ESC>")
 -- Telescope
 map("n", "<leader>ff", "<CMD>Telescope find_files<CR>", { desc = "Fuzzy find files in cwd" })
 map("n", "<leader>fF", "<CMD>Telescope find_files hidden=true<CR>", { desc = "Fuzzy find hidden files in cwd" })
+map("n", "<leader>FF", "<CMD>Telescope find_files hidden=true<CR>", { desc = "Fuzzy find hidden files in cwd" })
 map("n", "<leader>fg", "<CMD>Telescope live_grep<CR>", { desc = "Find string in cwd" })
 map("n", "<leader>fb", "<CMD>Telescope buffers<CR>", { desc = "Fuzzy find opened files" })
-map("n", "<leader>fs", "<CMD>Telescope git_status<CR>", { desc = "Show git status" })
-map("n", "<leader>fc", "<CMD>Telescope git_commits<CR>", { desc = "Browse git commits" })
 map("n", "<leader>ft", "<CMD>TodoTelescope<CR>", { desc = "Find todo markers" })
-map("n", "<leader>fh", "<CMD>Noice pick<CR>", { desc = "List message history" })
+map("n", "<leader>fe", "<CMD>Noice pick<CR>", { desc = "List message history. e='errors'" })
+map("n", "<leader>fh", "<CMD>Telescope help_tags<CR>", { desc = "Search help docs" })
+map("n", "<leader>fk", "<CMD>Telescope keymaps<CR>", { desc = "Fuzzy find keymaps" })
+map("n", "<leader>fc", "<CMD>Telescope commands<CR>", { desc = "Fuzzy find commands" })
+
+-- git
+map("n", "<leader>gs", "<CMD>Telescope git_status<CR>", { desc = "Show git status" })
+map("n", "<leader>gc", "<CMD>Telescope git_commits<CR>", { desc = "Browse git commits" })
 
 -- Move cwd to currently focused file
 map("n", "<leader>cd", "<CMD>lcd %:p:h<CR>")
@@ -63,7 +69,7 @@ lsp = vim.lsp.buf
 map("n", "<leader>k", lsp.hover)
 map("n", "gd", lsp.definition)
 map({ "n", "v" }, "<leader>ca", lsp.code_action)
-map("n", "<leader>R", lsp.rename)
+map("n", "<leader>r", lsp.rename)
 
 -- -- Markdown preview
 -- map({ "n", "i", "v" }, "<C-m>", "<CMD>MarkdownPreview<CR>")
