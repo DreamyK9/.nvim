@@ -11,13 +11,15 @@ return {
 		require("mason-lspconfig").setup({
 			automatic_installation = true,
 			ensure_installed = {
-				"cssls",
-				"eslint",
 				"html",
-				"jsonls",
-				"ts_ls",
-				"pyright",
+				"cssls",
 				"tailwindcss",
+				"eslint",
+				"ts_ls",
+				"jsonls",
+				"pyright",
+				"lua_ls",
+				"bashls",
 			},
 		})
 
