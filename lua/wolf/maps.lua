@@ -71,6 +71,9 @@ map("n", "gd", lsp.definition)
 map({ "n", "v" }, "<leader>ca", lsp.code_action)
 map("n", "<leader>r", lsp.rename)
 
+-- Copilot Chat
+map("n", "<leader>cc", "<CMD>CopilotChat<CR>", { desc = "Open Copilot Chat" })
+
 -- -- Markdown preview
 -- map({ "n", "i", "v" }, "<C-m>", "<CMD>MarkdownPreview<CR>")
 -- map({ "n", "i", "v" }, "<C-M>", "<CMD>MarkdownPreviewStop<CR>")
