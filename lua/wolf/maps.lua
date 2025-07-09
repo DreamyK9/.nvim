@@ -16,7 +16,7 @@ map("n", "<leader>wq", "<CMD>wq<CR>")
 map("i", "jk", "<ESC>")
 
 -- NeoTree
-map("n", "<leader>R", "<CMD>Neotree toggle<CR>")
+map("n", "<leader>n", "<CMD>Neotree toggle<CR>")
 -- map("n", "<leader>r", "<CMD>Neotree focus<CR>")
 
 -- New Windows
@@ -61,7 +61,7 @@ map("n", "<leader>gc", "<CMD>Telescope git_commits<CR>", { desc = "Browse git co
 map("n", "<leader>cd", "<CMD>lcd %:p:h<CR>")
 
 -- Hex editor
-map("n", "<leader>x", "<CMD>HexToggle<CR>")
+map("n", "<leader>X", "<CMD>HexToggle<CR>")
 
 -- Lsp stuff
 lsp = vim.lsp.buf
@@ -78,9 +78,9 @@ map("n", "<leader>r", lsp.rename)
 -- Execute current file
 -- Source: https://www.reddit.com/r/neovim/comments/1ai19ux/execute_current_file_script_using_a_keymap_i_use/
 --
--- If this is a script, make it executable, and execute it in a split pane on the right
+-- If focused buffer is a script, make it executable, and execute it in a split window on the right
 -- Had to include quotes around "%" because there are some apple dirs that contain spaces, like iCloud
-vim.keymap.set("n", "<leader>e", function()
+vim.keymap.set("n", "<leader>x", function()
 	local file = vim.fn.expand("%") -- Get the current file name
 	local first_line = vim.fn.getline(1) -- Get the first line of the file
 	if string.match(first_line, "^#!/") then -- If first line contains shebang
