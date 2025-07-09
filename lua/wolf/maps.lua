@@ -7,11 +7,10 @@ local function map(mode, lhs, rhs, opts)
 	vim.keymap.set(mode, lhs, rhs, opts)
 end
 
--- Save
+-- Save & Quit
 map("n", "<leader>w", "<CMD>update<CR>")
-
--- Quit
 map("n", "<leader>q", "<CMD>q<CR>")
+map("n", "<leader>wq", "<CMD>wq<CR>")
 
 -- Exit insert mode
 map("i", "jk", "<ESC>")
