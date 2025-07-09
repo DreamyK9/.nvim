@@ -24,4 +24,17 @@ o.inccommand = "split"
 o.splitright = true
 o.splitbelow = true
 o.termguicolors = true
+
+if vim.fn.has("win32") == 1 then
+	o.shell = "bash"
+	o.shellcmdflag = "-c"
+	o.shellredir = ">%s 2>&1"
+	o.shellquote = ""
+	o.shellxescape = ""
+	-- o.shelltemp = false -- Uncomment if you want to set noshelltemp
+	o.shellxquote = ""
+	o.shellpipe = "2>&1| tee"
+	vim.env.TMP = "/tmp"
+end
+
 vim.cmd("language en_US.UTF8")
