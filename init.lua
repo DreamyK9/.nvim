@@ -1,6 +1,48 @@
-if vim.loop.os_uname().sysname == "Windows_NT" then
-	-- python interpreter. might need to be changed per system
-	vim.g.python3_host_prog = vim.env.USERPROFILE .. "/.pyenv/pyenv-win/versions/3.13.3/python.exe"
-end
+-- TODO: Automatically find python environment on windows
+-- Doesn't work because luarocks.nvim doesn't.
+--
+-- if vim.fn.has("win32") == 1 then
+-- 	local lfs = require("luafilesystem")
+-- 	local wp = require("wildcard_pattern")
+--
+-- 	local function path_exists(path)
+-- 		return lfs.attributes(path) ~= nil
+-- 	end
+--
+-- 	local function path_from_wildcard(path, wildcard)
+-- 		local pattern = wp.from_wildcard(wildcard)
+-- 		for file in lfs.dir(path) do
+-- 			if file ~= "." and file ~= ".." then
+-- 				if string.match(file, pattern) then
+-- 					return path .. "/" .. file
+-- 				end
+-- 			end
+-- 		end
+-- 	end
+--
+-- 	local USER_HOME = vim.env.USERPROFILE
+--
+-- 	-- Warning: Not tested for other installations, than pyenv
+-- 	local python_envs = { "pyenv", "standalone", "msstore" }
+-- 	local python_paths = {
+-- 		USER_HOME .. "/.pyenv/pyenv-win/shims/python",
+-- 		path_from_wildcard(USER_HOME .. "/AppData/Local/Programs/Python", "Python3*") .. "/python.exe",
+-- 		path_from_wildcard(
+-- 			path_from_wildcard(USER_HOME .. "/AppData/Local/Packages", "PythonSoftwareFoundation.Python.3*")
+-- 				.. "/LocalCache/local-packages",
+-- 			"Python*"
+-- 		) .. "/python.exe",
+-- 	}
+-- 	local installed = { false, false, false }
+--
+-- 	for i = 1, #python_envs do
+-- 		if path_exists(python_paths[i]) then
+-- 			vim.g.python3_host_prog = python_paths[i]
+-- 		end
+-- 	end
+-- end
+
+-- hardcoded quickfix for above
+vim.g.python3_host_prog = vim.env.USERPROFILE .. "/.pyenv/pyenv-win/shims/python"
 
 require("wolf")
