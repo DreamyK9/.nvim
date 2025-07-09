@@ -54,6 +54,7 @@ map("n", "<leader>fk", "<CMD>Telescope keymaps<CR>", { desc = "Fuzzy find keymap
 map("n", "<leader>fc", "<CMD>Telescope commands<CR>", { desc = "Fuzzy find commands" })
 
 -- git
+map("n", "<leader>gg", "<CMD>LazyGit<CR>", { desc = "Open Lazygit" })
 map("n", "<leader>gs", "<CMD>Telescope git_status<CR>", { desc = "Show git status" })
 map("n", "<leader>gc", "<CMD>Telescope git_commits<CR>", { desc = "Browse git commits" })
 
