@@ -25,7 +25,8 @@ o.splitright = true
 o.splitbelow = true
 o.termguicolors = true
 
-if vim.fn.has("win32") == 1 then
+local running_in_unix_shell = vim.env.SHELL
+if vim.fn.has("win32") == 1 and running_in_unix_shell then
 	o.shell = "bash"
 	o.shellcmdflag = "-c"
 	o.shellredir = ">%s 2>&1"
