@@ -1,6 +1,7 @@
 return {
 	-- Mason installs and manages packages, like language servers
 	"williamboman/mason.nvim",
+	priority = 10,
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
@@ -8,28 +9,34 @@ return {
 	config = function()
 		require("mason").setup()
 
-		require("mason-lspconfig").setup({
-			automatic_installation = true,
-			ensure_installed = {
-				"html",
-				"cssls",
-				"tailwindcss",
-				"eslint",
-				"ts_ls",
-				"jsonls",
-				"pyright",
-				"lua_ls",
-				"bashls",
-			},
-		})
+		tools = {
+			-- Language servers
+			"html",
+			"cssls",
+			"tailwindcss",
+			"eslint",
+			"ts_ls",
+			"jsonls",
+			"pyright",
+			"lua_ls",
+			"bashls",
+			-- Formatters
+			"prettier", -- JavaScript & Co. formatter
+			"eslint_d", -- JavaScript formatter
+			"stylua", -- lua formatter
+			"ruff", -- Blazingly fast, comprehensive python formatter and linter, written in Rust
+		}
+
+		require("mason-lspconfig").setup({})
 
 		require("mason-tool-installer").setup({
-			ensure_installed = {
-				"prettier", -- JavaScript & Co. formatter
-				"eslint_d", -- JavaScript formatter
-				"stylua", -- lua formatter
-				"ruff", -- Blazingly fast, comprehensive python formatter and linter, written in Rust
-			},
+			automatic_installation = true,
+			ensure_installed = tools,
 		})
+
+		-- Fixes vim.lsp complaining about missing config
+		for _, server in ipairs(tools) do
+			vim.lsp.config(server, {})
+		end
 	end,
 }
