@@ -10,6 +10,7 @@ return {
 		local treesitter = require("nvim-treesitter.configs")
 
 		treesitter.setup({
+			modules = {},
 			highlight = {
 				enable = true,
 				additional_vim_regex_highlighting = false,
@@ -37,6 +38,9 @@ return {
 				"rust",
 				"diff",
 			},
+			auto_install = true,
+			sync_install = false,
+			ignore_install = {},
 			incremental_selection = {
 				enable = true,
 				keymaps = {
